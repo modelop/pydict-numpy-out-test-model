@@ -1,12 +1,14 @@
 #fastscore.slot.0: in-use
 #fastscore.slot.1: in-use
 
+import numpy as np
+
 #modelop.score
 def action(datum):
     print(datum, flush=True)
     i = datum['i']
     out = {
-            'integer' : 123 * i,
+            'integer' : np.int64(123 * i),
             'float' : 123.456 + i,
             'boolean': i % 2 == 0,
             'string': 'thequickbrownfoxjumpedoverthelazydog'[0:i]
